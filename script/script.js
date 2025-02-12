@@ -17,8 +17,8 @@ function createHeart() {
   heart.className = 'falling-heart';
   heart.textContent = '❤️'; // Heart emoji
   heart.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-  heart.style.fontSize = `${Math.random() * 20 + 10}px`; // Random size between 10px and 30px
-  heart.style.animationDuration = `${Math.random() * 2 + 3}s`; // Random fall duration (3-5s)
+  heart.style.fontSize = `${Math.random() * 20 + 50}px`; // Random size between 10px and 30px
+  heart.style.animationDuration = `${Math.random() * 0.2 + 1}s`; // Random fall duration (3-5s)
 
   body.appendChild(heart);
 
@@ -62,25 +62,27 @@ $(document).ready(function () {
       });
   });
 
-  // Function to create falling hearts
+  // Function to create falling hearts INSIDE .card-section
   function createHeart() {
       const heart = document.createElement('div');
       heart.className = 'falling-heart';
       heart.textContent = '❤️';
 
-      // Random position, size, and animation duration
-      heart.style.left = `${Math.random() * 100}vw`;
-      heart.style.fontSize = `${Math.random() * 20 + 10}px`; 
-      heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      const cardSection = document.querySelector('.card-section');
 
-      document.getElementById('falling-hearts-container').appendChild(heart);
+      // Random position, size, and animation duration
+      heart.style.left = `${Math.random() * 100}%`; // Stay within section width
+      heart.style.fontSize = `${Math.random() * 20 + 10}px`; 
+      heart.style.animationDuration = `${Math.random() * 2 + 2}s`;
+      // Append hearts only inside card-section
+      cardSection.appendChild(heart);
 
       // Remove heart after it falls
       setTimeout(() => {
           heart.remove();
-      }, 5000);
+      }, 5000); // Remove quickly after falling
   }
 
-  // Spawn falling hearts every 300ms
-  setInterval(createHeart, 300);
+  // Spawn falling hearts every 150ms (More frequent & faster)
+  setInterval(createHeart, 100);
 });

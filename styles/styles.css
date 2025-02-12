@@ -218,12 +218,11 @@ body {
   height: 25px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.3);
-  top: 230px; /* Adjusted position to be below the card */
+  top: 230px; /* Adjusted position to be below the envelope */
   left: -15px;
+  z-index: -1; /* Ensure it's behind the envelope */
   animation: scale 3s linear infinite;
-  z-index: -2; /* Lower z-index to ensure it's behind the card */
 }
-
 
 @keyframes scale {
   0%, 100% {
@@ -234,11 +233,12 @@ body {
   }
 }
 
+
 .falling-heart {
   position: absolute;
   top: -10px;
-  opacity: 0.8;
-  animation: fall linear infinite;
+  opacity: 0.9;
+  animation: fall linear forwards;
 }
 
 @keyframes fall {
@@ -247,9 +247,15 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translateY(100vh);
+    transform: translateY(120vh); /* Faster falling */
     opacity: 0;
   }
+}
+
+/* Make sure falling hearts stay inside the card-section */
+.card-section {
+  position: relative; /* Keeps hearts inside this section */
+  overflow: hidden; /* Prevents overflow outside */
 }
 
 /* Flashy animation when clicking the card */
