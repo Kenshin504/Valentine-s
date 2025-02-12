@@ -47,13 +47,19 @@ $(document).ready(function () {
       }, 400); // Remove effect after animation
 
       $('.dark-overlay').fadeIn(); // Show dark overlay
-      $('.overlay-card').fadeIn(); // Show message card
+      $('.overlay-card').fadeIn().css('display', 'flex'); // Show message card
   });
 
-  // Close button event
+  // Close button event with smooth animation
   $('.close-btn').click(function () {
-      $('.dark-overlay').fadeOut(); // Hide dark overlay
-      $('.overlay-card').fadeOut(); // Hide message card
+      $('.overlay-card').addClass('closing'); // Add closing animation
+
+      // Wait for the animation to finish, then hide the card properly
+      $('.overlay-card').on('animationend', function () {
+          $('.overlay-card').hide().removeClass('closing'); // Hide message card after animation completes
+          $('.dark-overlay').fadeOut(); // Hide dark overlay
+          $(this).off('animationend'); // Remove event listener to avoid duplication
+      });
   });
 
   // Function to create falling hearts
