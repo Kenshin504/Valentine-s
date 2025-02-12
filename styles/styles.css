@@ -1,4 +1,8 @@
 body {
+  margin: 0;
+}
+
+.card-section {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +54,7 @@ body {
   position: absolute;
   background-color: #eae2b7;
   width: 270px;
-  height: 170px;
+  height: 190px;
   top:5px;
   left:15px;
   box-shadow: -5px -5px 100px rgba(0,0,0,0.4); 
@@ -62,7 +66,7 @@ body {
   border:3px solid #003049;
   border-style: dotted;
   width: 240px;
-  heighT: 140px;
+  heighT: 170px;
   left:12px;
   top:12px;
 }
@@ -82,10 +86,10 @@ body {
   background-color: #d62828;
   display: inline-block;
   height: 30px;
-  margin: 0 10px;
+  margin: 10px;
   position: relative;
-  top: 110px;
-  left:105px;
+  top: 135px;
+  left:110px;
   transform: rotate(-45deg);
   width: 30px;
 }

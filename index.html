@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Surprise</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Valentine's Surprise</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/home.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="script/script.js"></script>
 </head>
 <body>
+    <section class="home-section">
+        hello  
+    </section>
 
-    <div class="container">  
-        <div class="valentines">
-            <div class="envelope"></div>
-            <div class="front"></div>
-            <div class="card">
-                <div class="text">Happy<br />Valentine's<br />Day!</div>
-                <div class="heart"></div>
+    <section class="card-section">
+        <div class="container">  
+            <div class="valentines">
+                <div class="envelope"></div>
+                <div class="front"></div>
+                <div class="card">
+                    <div class="text">Happy<br />Valentine's<br />Day! <br> <span style="font-size: 17px;">Click Me</span></br> </div>
+                    <div class="heart"></div>
+                </div>
+                <div class="hearts">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                    <div class="four"></div>
+                    <div class="five"></div>
+                </div>
             </div>
-            <div class="hearts">
-                <div class="one"></div>
-                <div class="two"></div>
-                <div class="three"></div>
-                <div class="four"></div>
-                <div class="five"></div>
+            <div class="shadow"></div>
+        </div>
+    
+        <!-- Dark overlay when reading message -->
+        <div class="dark-overlay"></div>
+    
+        <!-- Overlay Message Card -->
+        <div class="overlay-card">
+            <div class="overlay-content">
+                <p>Dear [Name],</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum expedita inventore numquam non tenetur? Facere mollitia cum nam, accusamus at beatae quia aspernatur aperiam magni blanditiis, harum molestiae ipsum hic error recusandae et dolorem sapiente facilis id incidunt ea ipsam voluptate qui! Eos, itaque eum veniam dicta magnam accusamus laboriosam quod debitis enim deserunt. Accusantium, commodi corporis fuga quasi magni facere reprehenderit sunt et eum corrupti voluptates, optio architecto deserunt quod praesentium minima dolorem ut expedita quis. Veniam ad quo in illum dolore atque odio aliquam laudantium! A corrupti labore itaque quo aliquam eaque. Accusantium rem perspiciatis totam. Ea, illum? ❤️</p>
+                <button class="close-btn">Close</button>
             </div>
         </div>
-        <div class="shadow"></div>
-    </div>
-
-    <!-- Dark overlay when reading message -->
-    <div class="dark-overlay"></div>
-
-    <!-- Overlay Message Card -->
-    <div class="overlay-card">
-        <div class="overlay-content">
-            <p>Dear [Name],</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum expedita inventore numquam non tenetur? Facere mollitia cum nam, accusamus at beatae quia aspernatur aperiam magni blanditiis, harum molestiae ipsum hic error recusandae et dolorem sapiente facilis id incidunt ea ipsam voluptate qui! Eos, itaque eum veniam dicta magnam accusamus laboriosam quod debitis enim deserunt. Accusantium, commodi corporis fuga quasi magni facere reprehenderit sunt et eum corrupti voluptates, optio architecto deserunt quod praesentium minima dolorem ut expedita quis. Veniam ad quo in illum dolore atque odio aliquam laudantium! A corrupti labore itaque quo aliquam eaque. Accusantium rem perspiciatis totam. Ea, illum? ❤️</p>
-            <button class="close-btn">Close</button>
-        </div>
-    </div>
-
-    <!-- Falling hearts container -->
-    <div id="falling-hearts-container"></div>
-
-    <script src="script/script.js"></script>
+    
+        <!-- Falling hearts container -->
+        <div id="falling-hearts-container"></div>
+    </section>
 </body>
 </html>
