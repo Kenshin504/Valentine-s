@@ -10,6 +10,18 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(function () {
+  // Mouseenter effect for the card (Move up + Show GIF)
+  $('.container').mouseenter(function () {
+      $('.card').stop().animate({ top: '-90px' }, 'slow');
+      $('.gif-container').fadeIn().addClass('show-gif'); // Show GIF below envelope
+  }).mouseleave(function () {
+      $('.card').stop().animate({ top: '5px' }, 'slow');
+      $('.gif-container').fadeOut().removeClass('show-gif'); // Hide GIF
+  });
+});
+
+
 const body = document.querySelector('body');
 
 function createHeart() {
@@ -85,4 +97,21 @@ $(document).ready(function () {
 
   // Spawn falling hearts every 150ms (More frequent & faster)
   setInterval(createHeart, 100);
+});
+
+$(document).ready(function () {
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = `${Math.random() * 100}vw`;
+        heart.style.animationDuration = `${Math.random() * 2 + 3}s`;
+        document.querySelector(".floating-hearts").appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    // Generate hearts every 300ms
+    setInterval(createHeart, 300);
 });
