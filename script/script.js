@@ -31,3 +31,50 @@ function createHeart() {
 // Spawn hearts every 300ms
 setInterval(createHeart, 300);
 
+$(document).ready(function () {
+  // Mouseenter effect for the card
+  $('.container').mouseenter(function () {
+      $('.card').stop().animate({ top: '-90px' }, 'slow');
+  }).mouseleave(function () {
+      $('.card').stop().animate({ top: '5px' }, 'slow');
+  });
+
+  // Click event to expand card with flashy effect
+  $('.card').click(function () {
+      $(this).addClass('clicked'); // Add flash effect
+      setTimeout(() => {
+          $(this).removeClass('clicked');
+      }, 400); // Remove effect after animation
+
+      $('.dark-overlay').fadeIn(); // Show dark overlay
+      $('.overlay-card').fadeIn(); // Show message card
+  });
+
+  // Close button event
+  $('.close-btn').click(function () {
+      $('.dark-overlay').fadeOut(); // Hide dark overlay
+      $('.overlay-card').fadeOut(); // Hide message card
+  });
+
+  // Function to create falling hearts
+  function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'falling-heart';
+      heart.textContent = '❤️';
+
+      // Random position, size, and animation duration
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.fontSize = `${Math.random() * 20 + 10}px`; 
+      heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+      document.getElementById('falling-hearts-container').appendChild(heart);
+
+      // Remove heart after it falls
+      setTimeout(() => {
+          heart.remove();
+      }, 5000);
+  }
+
+  // Spawn falling hearts every 300ms
+  setInterval(createHeart, 300);
+});
