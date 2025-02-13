@@ -127,3 +127,29 @@ $(document).ready(function () {
         $(".gif-container").fadeOut().removeClass("show-gif"); // Hide GIF
     });
 });
+
+$(document).ready(function () {
+    $(document).ready(function () {
+        // "Yes" Button - Show Happy GIF & Message
+        $(".home-button.yes").click(function () {
+            $(".home-text").text("Yay! 💖 Happy Valentine's! 🎉");
+            $(".yes-gif").fadeIn();
+            $(".no-click-gif").hide(); // Hide sad GIF if shown
+        });
+    
+        // "No" Button - Show Sad GIF & Message
+        $(".home-button.no").click(function () {
+            $(".home-text").text("How about next year? 😢");
+            $(".no-click-gif").fadeIn();
+            $(".yes-gif").hide(); // Hide happy GIF if shown
+        });
+    
+        // "No" Button - Show Hover GIF
+        $(".home-button.no").mouseenter(function () {
+            $(".no-gif").fadeIn(); // Show hover GIF
+        }).mouseleave(function () {
+            $(".no-gif").fadeOut(); // Hide hover GIF
+        });
+    });
+      
+});

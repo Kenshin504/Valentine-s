@@ -9,12 +9,11 @@
   overflow: hidden; /* Ensure hearts stay inside */
 }
 
-/* Glassmorphism Card */
+/* Home Card */
 .home-card {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(255, 0, 127, 0.3);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 600px;
@@ -22,7 +21,8 @@
   padding: 40px;
   text-align: center;
   position: relative;
-  z-index: 2; /* Above floating hearts */
+  z-index: 2;
+  margin: 20px auto; /* Add spacing around the card */
 }
 
 /* Title Text */
@@ -104,5 +104,122 @@
   100% {
     transform: translateY(-100vh) rotate(-45deg) scale(1.5);
     opacity: 0;
+  }
+}
+
+/* No Button Container */
+.no-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hover GIF Above No Button */
+.no-gif {
+  position: absolute;
+  top: 100%;
+  left: 170%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: none; /* Hidden by default */
+  z-index: 10;
+}
+
+/* No Button */
+.home-button.no {
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* GIF Container for Click Responses */
+.response-gif {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Yes & No Click GIFs */
+.yes-gif, .no-click-gif {
+  width: 150px;
+  display: none; /* Hidden by default */
+  margin: 0 auto;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  /* Adjust Home Section */
+  .home-section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust Card */
+  .home-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    margin: 40px;
+  }
+
+  /* Adjust Title Text */
+  .home-text {
+    font-size: 36px;
+  }
+
+  /* Adjust Buttons */
+  .home-button {
+    font-size: 18px;
+    padding: 8px 20px;
+    margin: 8px;
+  }
+
+  /* Adjust No Hover GIF */
+  .no-gif {
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    bottom: 110%;
+    transform: translateX(-50%);
+  }
+
+  /* Adjust Click GIFs */
+  .yes-gif, .no-click-gif {
+    width: 120px;
+  }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 480px) {
+  .home-text {
+    font-size: 28px;
+  }
+
+  .home-button {
+    font-size: 16px;
+    padding: 6px 15px;
+  }
+
+  .yes-gif, .no-click-gif {
+    width: 100px;
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  /* Adjust Home Card Margin */
+  .home-card {
+    margin: 30px auto; /* More space on smaller screens */
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-card {
+    margin: 40px auto; /* Extra margin on very small screens */
+    padding: 25px;
   }
 }
