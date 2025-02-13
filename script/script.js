@@ -115,3 +115,15 @@ $(document).ready(function () {
     // Generate hearts every 300ms
     setInterval(createHeart, 300);
 });
+
+
+$(document).ready(function () {
+    // Open envelope & show GIF on hover
+    $(".valentines").mouseenter(function () {
+        $(".flap").css("transform", "rotateX(180deg)"); // Open flap
+        $(".gif-container").fadeIn().addClass("show-gif"); // Show GIF
+    }).mouseleave(function () {
+        $(".flap").css("transform", "rotateX(0deg)"); // Close flap
+        $(".gif-container").fadeOut().removeClass("show-gif"); // Hide GIF
+    });
+});
