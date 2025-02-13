@@ -66,7 +66,7 @@ body {
   border:3px solid #003049;
   border-style: dotted;
   width: 240px;
-  heighT: 170px;
+  height: 170px;
   left:12px;
   top:12px;
 }
@@ -311,23 +311,37 @@ body {
 }
 
 
-/* Overlay message card (same as before) */
+/* Overlay Message Card */
 .overlay-card {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-50%, -50%);
   width: 80%;
   max-width: 400px;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.3);
+  background: #eae2b7;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
-  text-align: center;
+  text-align: justify;
   display: none;
-  z-index: 10; /* Ensure it's above everything */
+  z-index: 10;
   opacity: 0;
   animation: fadeIn 0.3s forwards;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.overlay-card::before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049;
+  border-style: dotted;
+  width: calc(100% - 24px); /* Adjusted to fit inside */
+  height: calc(100% - 24px); /* Adjusted to fit inside */
+  left: 12px;
+  top: 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 @keyframes fadeIn {
@@ -336,9 +350,11 @@ body {
 }
 
 .overlay-content {
-  font-family: Arial, sans-serif;
+  font-family: 'Brush Script MT', cursive;
   font-size: 18px;
   color: #333;
+  position: relative;
+  z-index: 2;
 }
 
 .close-btn {
@@ -349,6 +365,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  font-weight: bold;
 } 
 
 /* Closing animation for the card */

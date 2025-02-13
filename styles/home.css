@@ -17,12 +17,12 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   max-width: 600px;
-  width: 90%;
+  width: 100%;
   padding: 40px;
   text-align: center;
   position: relative;
   z-index: 2;
-  margin: 20px auto; /* Add spacing around the card */
+  margin: 20px; /* Add spacing around the card */
 }
 
 /* Title Text */
@@ -205,21 +205,5 @@
 
   .yes-gif, .no-click-gif {
     width: 100px;
-  }
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-  /* Adjust Home Card Margin */
-  .home-card {
-    margin: 30px auto; /* More space on smaller screens */
-    padding: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-card {
-    margin: 40px auto; /* Extra margin on very small screens */
-    padding: 25px;
   }
 }
